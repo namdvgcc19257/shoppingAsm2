@@ -77,7 +77,7 @@
 		   $result = pg_query($conn,$sq);
 		   if(pg_num_rows($result)==0)
 		   {
-			   pg_query($conn, "UPDATE category SET cat_name  = '$name', cat_des='$des' WHERE cat_ids='$id'");
+			   pg_query($conn, "UPDATE category SET cat_name  = '$name', cat_des='$des' WHERE cat_id='$id'");
 			   echo '<meta http-equiv="refresh" content="0;URL=?page=category_management"/>';
 		   }
 		   else
