@@ -28,25 +28,25 @@ include_once("connection.php");
                         <div class="product-carousel">
                            <?php
 
-		  				   	$result = mysqli_query($conn, "SELECT * FROM product" );
+		  				   	$result = pg_query($conn, "SELECT * FROM product" );
 			
 			                if (!$result) { 
-                                die('Invalid query: ' . mysqli_error($conn));
+                                die('Invalid query: ' . pg_errormessage($conn));
                             }
 		
 			            
-			                while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+			                while($row = pg_fetch_array($result,NULL, PGSQL_ASSOC)){
 				            ?>
 				            
                             <div class="single-product">
                                 <div class="product-f-imagemu">
-                                   <img src="img/<?php echo $row['Pro_image']?>" width="550" height="450">
+                                   <img src="img/<?php echo $row['pro_image']?>" width="550" height="450">
                                     <div class="product-hover">
-                                        <a href="?page=1sanpham&&id=<?php echo  $row['Pro_image']?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="?page=1sanpham&&id=<?php echo  $row['pro_image']?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="?page=quanly_chitietsanpham&ma=<?php echo  $row['Product_ID']?>"><?php echo  $row['Product_Name' ]?></a>
+                                <h2><a href="?page=quanly_chitietsanpham&ma=<?php echo  $row['product_id']?>"><?php echo  $row['product_name' ]?></a>
                                 </h2>
                                     
                                 <div class="product-carousel-price">
