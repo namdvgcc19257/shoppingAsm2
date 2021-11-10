@@ -218,8 +218,6 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy;Just do it
-                            <img src="images/Main.png" width="50" height="50"> </p>
                     </div>
                 </div>
                 <div class="col-md-4">
