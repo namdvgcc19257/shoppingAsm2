@@ -148,7 +148,7 @@
         }
         elseif($page=="logout")
         {
-            include_once("logout.php");
+            include_once("Logout.php");
         }
         elseif($page=="update_product")
         {
