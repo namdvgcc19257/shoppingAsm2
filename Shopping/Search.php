@@ -13,18 +13,18 @@
                                               echo '<meta http-equiv="refresh" content="0;URL=index.php">';
                                             }
                                            else {
-		  				   	        $result = mysqli_query($conn, "SELECT * FROM product where product_id like '%".$data."%' or product_name like '%".$data."%'");
-    			                if(mysqli_num_rows($result)==0)
+		  				   	        $result = pg_query($conn, "SELECT * FROM product where product_id like '%".$data."%' or product_name like '%".$data."%'");
+    			                if(pg_num_rows($result)==0)
                           {
                             echo  "<script>alert('No find data. Please Enter Again!')</script>";
                             echo '<meta http-equiv="refresh" content="0;URL=index.php">';
                           }
                           else {
                            if (!$result) { //add this check.
-                                die('Invalid query: ' . mysqli_error($conn));
+                                die('Invalid query: ' . pg_error($conn));
                             }
                             else {
-			                    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+			                    while($row = pg_fetch_array($result,NULL, PGSQL_ASSOC)){
 				                  ?>
     <!--Display product-->
     <div class="col-sm-3">
@@ -35,7 +35,6 @@
             </h4>
             <div class="price"><ins>$ <?php echo  $row['price']?></ins> <del class="oldprice">
                     $<?php echo  $row['oldPrice']?></del></div>
-            <p><button><a href="?page=cartfuntion&ma=<?php echo  $row['product_id']?>">Add to Cart</a></button></p>
         </div>
     </div>
     <?php
