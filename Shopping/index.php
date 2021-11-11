@@ -130,6 +130,10 @@
         {
             include_once("Login.php");
         }
+        elseif($page=="search")
+        {
+            include_once("Search.php");
+        }
         elseif($page=="Category_Management")
         {
             include_once("Category_Management.php");
