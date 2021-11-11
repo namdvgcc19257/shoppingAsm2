@@ -21,7 +21,7 @@
                           }
                           else {
                            if (!$result) { //add this check.
-                                die('Invalid query: ' . pg_error($conn));
+                                die('Invalid query: ' . pg_errormassege($conn));
                             }
                             else {
 			                    while($row = pg_fetch_array($result,NULL, PGSQL_ASSOC)){
