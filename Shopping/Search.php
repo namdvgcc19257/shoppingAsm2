@@ -13,7 +13,7 @@
                                               echo '<meta http-equiv="refresh" content="0;URL=index.php">';
                                             }
                                            else {
-		  				   	        $result = mysqli_query($conn, "SELECT * FROM product where Product_ID like '%".$data."%' or Product_Name like '%".$data."%'");
+		  				   	        $result = mysqli_query($conn, "SELECT * FROM product where product_id like '%".$data."%' or product_name like '%".$data."%'");
     			                if(mysqli_num_rows($result)==0)
                           {
                             echo  "<script>alert('No find data. Please Enter Again!')</script>";
@@ -29,13 +29,13 @@
     <!--Display product-->
     <div class="col-sm-3">
         <div class="card">
-            <img src="product-imgs/<?php echo $row['Pro_image']?>" style="width:100%">
+            <img src="product-imgs/<?php echo $row['pro_image']?>" style="width:100%">
             <h4 class="name"><a
-                    href="?page=quanly_chitietsanpham&ma=<?php echo  $row['Product_ID']?>"><?php echo  $row['Product_Name']?></a>
+                    href="?page=quanly_chitietsanpham&ma=<?php echo  $row['product_id']?>"><?php echo  $row['product_name']?></a>
             </h4>
-            <div class="price"><ins>$ <?php echo  $row['Price']?></ins> <del class="oldprice">
+            <div class="price"><ins>$ <?php echo  $row['price']?></ins> <del class="oldprice">
                     $<?php echo  $row['oldPrice']?></del></div>
-            <p><button><a href="?page=cartfuntion&ma=<?php echo  $row['Product_ID']?>">Add to Cart</a></button></p>
+            <p><button><a href="?page=cartfuntion&ma=<?php echo  $row['product_id']?>">Add to Cart</a></button></p>
         </div>
     </div>
     <?php
