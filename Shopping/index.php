@@ -71,9 +71,8 @@
                                     </div>
                                     <br>
                                     <button type="submit" class="Btn btn-default">Search<button>
-
                                     </from>
-</a>
+                                    </a>
                                </li>                    
                                 <?php
                                     if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
