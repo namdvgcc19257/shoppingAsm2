@@ -23,7 +23,7 @@
             } 
         ?>
         <form name="frm" method="post" action="">
-        <h1 style="text-align: center;">Product Management</h1>
+        <h1 style="text-align: center;">Product management company ATN</h1>
         <p>
             <a href="?page=add_product"><img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" />&nbsp;Add new</a>
         </p>

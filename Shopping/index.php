@@ -49,7 +49,7 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 								<li><a href="#"><i class="fa fa-phone"></i> 0339197445</a></li>
-								<li><a href="" target="_blank"><i class="fa fa-envelope"></i>84CarModel@gmail.com</a></li>
+								<li><a href="" target="_blank"><i class="fa fa-envelope"></i>84CarModelATN@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -64,13 +64,13 @@
 					</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php">Home</a></li>
+								<li><a href="index.php">Home ATN</a></li>
                                <li><a> <from class="navbar-from navbar-left" action="index.php?page=search" method="post>">
                                     <div class="from-group">
                                         <input type="text" class="from-control" placeholder="search" name="txtSearch">
                                     </div>
                                     <br>
-                                    <button type="submit" class="Btn btn-default">Search<button>
+                                    <button type="submit" class="Btn btn-default">ATN Company<button>
                                     </from>
                                     </a>
                                </li>                    
@@ -89,7 +89,7 @@
                                    if (isset($_SESSION['us']) && $_SESSION['us']!=""){
                                        ?> 
                                        <li><a href="?page=update_customes">
-                                       <i class="fa fa-lock"></i>Hello, <?php echo $_SESSION['us']?></a>
+                                       <i class="fa fa-lock"></i>ATN, <?php echo $_SESSION['us']?></a>
                                         </li>
                                            <li><a href="?page=logout">
                                             <i class="fa fa-crosshairs"></i>Logout</a></li>
@@ -109,7 +109,7 @@
 							</ul>
                             
 						</div>
-                        <marquee width="100%" behavior="scroll" bgcolor="white"><b>Welcome To My Car Model</b></marquee>
+                        <marquee width="100%" behavior="scroll" bgcolor="white"><b>Welcome To ATN Car Model</b></marquee>
 					</div>
 
 				</div>
@@ -213,7 +213,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
-                        <h2><span>Color Car</span></h2>
+                        <h2><span>ATN Car Model</span></h2>
                         <p>Yellow Car<br>
                         Orange <br>
                         Red Car <br>
