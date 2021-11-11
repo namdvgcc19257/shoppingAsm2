@@ -65,13 +65,15 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home ATN</a></li>
-                                <from class="navbar-from navbar-left" action="index.php?page=search" method="post>">
+                               <li><a> <from class="navbar-from navbar-left" action="index.php?page=search" method="post>">
                                     <div class="from-group">
                                         <input type="text" class="from-control" placeholder="Company ANT" name="txtSearch">
                                     </div>
                                     <br>
                                     <button type="submit" class="Btn btn-default">Search<button>
-                                    </from>                                      
+                                    </from>
+                                    </a>
+                               </li>                    
                                 <?php
                                     if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
                                 ?> 
