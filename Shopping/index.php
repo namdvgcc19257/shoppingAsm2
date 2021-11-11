@@ -67,10 +67,10 @@
 								<li><a href="index.php">Home ATN</a></li>
                                <li><a> <from class="navbar-from navbar-left" action="index.php?page=search" method="post>">
                                     <div class="from-group">
-                                        <input type="text" class="from-control" placeholder="search" name="txtSearch">
+                                        <input type="text" class="from-control" placeholder="Company ANT" name="txtSearch">
                                     </div>
                                     <br>
-                                    <button type="submit" class="Btn btn-default">ATN Company<button>
+                                    <button type="submit" class="Btn btn-default">Search<button>
                                     </from>
                                     </a>
                                </li>                    
