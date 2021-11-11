@@ -69,7 +69,9 @@
                                     <div class="from-group">
                                         <input type="text" class="from-control" placeholder="search" name="txtSearch">
                                     </div>
+                                    <br>
                                     <button type="submit" class="Btn btn-default">Search<button>
+
                                     </from>
 </a>
                                </li>                    
