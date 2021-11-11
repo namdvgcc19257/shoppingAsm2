@@ -65,8 +65,14 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home</a></li>
-                                <li><a class="active"><input type="search" id="search" placeholder="   "></a></li>
-                            
+                               <li><a> <from class="navbar-from navbar-left" action="index.php?page=search" method="post>">
+                                    <div class="from-group">
+                                        <input type="text" class="from-control" placeholder="search" name="txtSearch">
+                                    </div>
+                                    <button type="submit" class="Btn btn-default">Search<button>
+                                    </from>
+</a>
+                               </li>                    
                                 <?php
                                     if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
                                 ?> 
