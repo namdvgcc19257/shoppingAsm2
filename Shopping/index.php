@@ -106,13 +106,7 @@
                                 <?php
                                         }
                                         ?>
-                                </li> 
-                                <from class="navbar-from navbar-left" action="index.php?page=search" method="post>">
-                                    <div class="from-group">
-                                        <input type="text" class="from-control" placeholder="search" name="txtSearch">
-                                    </div>
-                                    <button type="submit" class="Btn btn-default">Search<button>
-                                    </from>
+                                </li>                        
 							</ul>
                             
 						</div>
