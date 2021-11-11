@@ -208,8 +208,8 @@
                         Red Car <br>
                         </p>
                         <div class="footer-social">
-                            <a href="https://www.facebook.com/Just-Authentic-101349471810663    " target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="https://https://www.youtube.com/watch?v=65JrtwtTOdc&t=2s" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/Bluemohinh " target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/watch?v=vUiPf1XvZSA" target="_blank"><i class="fa fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>

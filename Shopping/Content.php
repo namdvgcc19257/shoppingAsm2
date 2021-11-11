@@ -50,7 +50,7 @@ include_once("connection.php");
                                 </h2>
                                     
                                 <div class="product-carousel-price">
-                                    <ins><?php echo  $row['Price']?>,0$</ins> 
+                                    <ins><?php echo  $row['price']?>,0$</ins> 
                                 </div> 
                             </div>
                 
