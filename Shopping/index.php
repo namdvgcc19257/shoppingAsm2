@@ -174,6 +174,19 @@
         {
             include_once("Update_customer.php");
         }
+        elseif($page=="update_branch")
+        {
+            include_once("Update_Branch.php");
+        }
+        elseif($page=="add_branch")
+        {
+            include_once("Add_Branch.php");
+        }
+        elseif($page=="branch_management")
+        {
+            include_once("Branch_Management.php");
+        }
+        
     } 
     else{
         include("Content.php");
