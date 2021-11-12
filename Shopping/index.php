@@ -80,7 +80,7 @@
 								<li class="dropdown"><a href="#">Management<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="?page=Category_Management">Category Car</a></li>
-                                        <li><a href="?page=Branch_Management">Branch</a></li>
+                                        <li><a href="?page=branch_management">Branch</a></li>
 										<li><a href="?page=product_management">Edit Car</a></li>
                                     </ul>
                                     <?php
