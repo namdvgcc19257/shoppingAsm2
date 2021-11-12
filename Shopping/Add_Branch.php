@@ -9,13 +9,9 @@
 		  include_once("connection.php");
 		  if(isset($_POST["btnAdd"]))
 		  {
-			  $id = $_POST["txtID"];
 			  $name = $_POST["txtName"];
 			  $des = $_POST["txtDes"];
 			  $err="";
-			  if($id==""){
-				  $err.="<li>Enter Branch ID, please</li>";
-			  }
 			  if($name==""){
 				  $err.="<li>Enter Branch Name, please</li>";
 			  }
@@ -23,16 +19,16 @@
 				  echo "<ul>$err</ul>";
 			  }
 			  else{
-				  $sq="SELECT * FROM branch WHERE branch_id='$id' or branch_name='$name'";
+				  $sq="SELECT * FROM branch WHERE bra_name='$name'";
 				  $result = pg_query($conn,$sq);
 				  if(pg_num_rows($result)==0)
 				  {
-					  pg_query($conn,"INSERT INTO branch (branch_id, branch_name, branch_des) VALUES ('$id', '$name', '$des')");
-					  echo '<meta http-equiv="Refesh" content="0;URL=Branch_Management.php"/>';
+					  pg_query($conn,"INSERT INTO branch (bra_name, bra_des) VALUES ('$name', '$des')");
+					  echo '<meta http-equiv="Refesh" content="0;URL=?page=branch_management"/>';
 				  }
 				  else
 				  {
-					  echo "<li>Duplicate  Branch ID or Name</li>";
+					  echo "<li>Duplicate  category Name</li>";
 				  }
 			  }
 		  }
@@ -40,17 +36,11 @@
 
 <div class="container">
 	<h2>Adding Branch</h2>
-			 	<form id="form2" name="form2" method="post" action="" class="form-horizontal" role="form">
-				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Branch ID(*):  </label>
-							<div class="col-sm-10">
-							      <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Branch ID" value='<?php echo isset($_POST["txtID"])?($_POST["txtID"]):"";?>'>
-							</div>
-					</div>	
+			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">	
 				 <div class="form-group">
 						    <label for="txtTen" class="col-sm-2 control-label">Branch Name(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="branch Name" value='<?php echo isset($_POST["txtName"])?($_POST["txtName"]):"";?>'>
+							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Branch Name" value='<?php echo isset($_POST["txtName"])?($_POST["txtName"]):"";?>'>
 							</div>
 					</div>
                     
@@ -63,8 +53,8 @@
                     
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-						      <input type="submit"  class="btn btn-primary" name="btnAdd" id="btnAdd" value="Add new" onclick="window.location='?page=Branch_Management'" />
-                              <input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=Branch_Management'" />
+						      <input type="submit"  class="btn btn-primary" name="btnAdd" id="btnAdd" value="Add new" onclick="window.location='?page=branch_management'" />
+                              <input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=branch_management'" />
                               	
 						</div>
 					</div>

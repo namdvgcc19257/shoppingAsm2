@@ -6,43 +6,36 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
    <?php
 	include_once("connection.php");
-    if(isset($_GET["id"]))
+    if(isset($_GET["name"]))
     {
-		$id = $_GET["id"];
-		$result = pg_query($conn, "SELECT * FROM branch WHERE branch_id='$id'");
+		$name = $_GET["name"];
+		$result = pg_query($conn, "SELECT * FROM branch WHERE bra_name='$name'");
 		$row = pg_fetch_array($result,NULL, PGSQL_ASSOC);
-		$cat_id = $row['branch_id'];
-		$cat_name = $row['branch_name'];
-		$cat_des = $row['branch_des'];
+		$bra_name = $row['bra_name'];
+		$bra_des = $row['bra_des'];
 	
 	?>
 <div class="container">
-	<h2>Updating Product Branch</h2>
-			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
-				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Branch ID(*):  </label>
-							<div class="col-sm-10">
-								  <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Branch ID" readonly value='<?php echo $cat_id ;?>'>
-							</div>
-					</div>	
+	<h2>Updating Company Branch</h2>
+			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">	
 				 <div class="form-group">
 						    <label for="txtTen" class="col-sm-2 control-label">Branch Name(*):  </label>
 							<div class="col-sm-10">
-								  <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Branch Name" value='<?php echo $cat_name; ?>'>
+								  <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Branch Name" readonly value='<?php echo $bra_name; ?>'>
 							</div>
 					</div>
                     
                     <div class="form-group">
 						    <label for="txtMoTa" class="col-sm-2 control-label">Description(*):  </label>
 							<div class="col-sm-10">
-								  <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description" value='<?php  echo $cat_des;?>'>
+								  <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description" value='<?php  echo $bra_des;?>'>
 							</div>
 					</div>
                     
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-						      <input type="submit"  class="btn btn-primary" name="btnUpdate" id="btnUpdate" value="Update" onclick="window.location='index.php?page=Branch_Management'"/>
-                              <input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='index.php?page=Branch_Management'"/>
+						      <input type="submit"  class="btn btn-primary" name="btnUpdate" id="btnUpdate" value="Update" onclick="window.location='index.php?page=branch_management'"/>
+                              <input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='index.php?page=branch_management'"/>
                               	
 						</div>
 					</div>
@@ -66,23 +59,23 @@
 	   $des = $_POST["txtDes"];
 	   $err="";
 	   if($name==""){
-		   $err.="<li> Enter Branch Name, please</li>";
+		   $err.="<li> Enter Category Name, please</li>";
 	   }
        if($err!=""){
 		   echo "<ul>$err</ul>";
 	   }
 	   else
 	   {
-		   $sq="SELECT * FROM branch WHERE branch_id !='$id' and branch_name='$name'";
+		   $sq="SELECT * FROM category WHERE cat_id !='$id' and cat_name='$name'";
 		   $result = pg_query($conn,$sq);
 		   if(pg_num_rows($result)==0)
 		   {
-			   pg_query($conn, "UPDATE branch SET branch_name  = '$name', branch_des='$des' WHERE branch_id='$id'");
-			   echo '<meta http-equiv="refresh" content="0;URL=?page=branch_management"/>';
+			   pg_query($conn, "UPDATE category SET cat_name  = '$name', cat_des='$des' WHERE cat_id='$id'");
+			   echo '<meta http-equiv="refresh" content="0;URL=?page=category_management"/>';
 		   }
 		   else
 		   {
-			   echo "<li> Duplicate branch Name</li>";
+			   echo "<li> Duplicate category Name</li>";
 		   }
 	   }
    }
