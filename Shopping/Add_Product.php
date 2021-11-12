@@ -18,6 +18,19 @@
 			}
 		echo "</select>";
 	}
+	include_once("connection.php");
+	function bind_Branch_List($conn)
+	{
+		$sqlString = "select branch_id, branch_name from branch";
+		$result = pg_query($conn,$sqlString);
+		echo "<select name='BranchList' class='form-control'>
+			<option value='0'>Choose category</option>";
+			while($row=pg_fetch_array($result,NULL, PGSQL_ASSOC))
+			{
+				echo "<option value='".$row['branch_id']."'>".$row['branch_name']."</option>";
+			}
+		echo "</select>";
+	}
 	if(isset($_POST["btnAdd"]))
 	{
 		$id = $_POST["txtID"];
@@ -28,6 +41,7 @@
 		$qty = $_POST["txtQty"];
 		$pic = $_FILES["txtImage"];
 		$category = $_POST["CategoryList"];
+		$branch = $_POST["BranchList"];
 		$err="";
 		if(trim($id)=="")
 		{
@@ -65,8 +79,8 @@
 					{
 						copy($pic['tmp_name'], "img/".$pic['name']);
 						$filepic = $pic['name'];
-						$sqlString = "insert into product(product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id)
-						values('$id','$proname','$price','$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filepic','$category')";
+						$sqlString = "insert into product(product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, branch_id)
+						values('$id','$proname','$price','$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filepic','$category','$branch')";
 						pg_query($conn,$sqlString);
 						echo '<meta http-equiv="refresh" content="0;URL =?page=product_management"';
 					}
@@ -103,6 +117,11 @@
                     <label for="" class="col-sm-2 control-label">Product category(*):  </label>
 						<div class="col-sm-10">
 							<?php bind_Category_List($conn); ?>
+						</div>
+						<div class="form-group">   
+                    <label for="" class="col-sm-2 control-label">Branch category(*):  </label>
+						<div class="col-sm-10">
+							<?php bind_Branch_List($conn); ?>
 						</div>
                 </div>  
                 <div class="form-group">  
