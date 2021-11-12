@@ -54,28 +54,27 @@
 	<?php
    if(isset($_POST["btnUpdate"]))
    {
-	   $id = $_POST["txtID"];
 	   $name = $_POST["txtName"];
 	   $des = $_POST["txtDes"];
 	   $err="";
 	   if($name==""){
-		   $err.="<li> Enter Category Name, please</li>";
+		   $err.="<li> Enter Branch Name, please</li>";
 	   }
        if($err!=""){
 		   echo "<ul>$err</ul>";
 	   }
 	   else
 	   {
-		   $sq="SELECT * FROM category WHERE cat_id !='$id' and cat_name='$name'";
+		   $sq="SELECT * FROM branch WHERE  bra_name!='$name'";
 		   $result = pg_query($conn,$sq);
 		   if(pg_num_rows($result)==0)
 		   {
-			   pg_query($conn, "UPDATE category SET cat_name  = '$name', cat_des='$des' WHERE cat_id='$id'");
-			   echo '<meta http-equiv="refresh" content="0;URL=?page=category_management"/>';
+			   pg_query($conn, "UPDATE branch SET bra_name  = '$name', bra_des='$des' WHERE bra_name='$name'");
+			   echo '<meta http-equiv="refresh" content="0;URL=?page=branch_management"/>';
 		   }
 		   else
 		   {
-			   echo "<li> Duplicate category Name</li>";
+			   echo "<li> Duplicate branch Name</li>";
 		   }
 	   }
    }
