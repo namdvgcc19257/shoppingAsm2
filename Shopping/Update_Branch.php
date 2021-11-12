@@ -73,12 +73,12 @@
 	   }
 	   else
 	   {
-		   $sq="SELECT * FROM category WHERE branch_id !='$id' and branch_name='$name'";
+		   $sq="SELECT * FROM branch WHERE branch_id !='$id' and branch_name='$name'";
 		   $result = pg_query($conn,$sq);
 		   if(pg_num_rows($result)==0)
 		   {
 			   pg_query($conn, "UPDATE branch SET branch_name  = '$name', branch_des='$des' WHERE branch_id='$id'");
-			   echo '<meta http-equiv="refresh" content="0;URL=?page=category_management"/>';
+			   echo '<meta http-equiv="refresh" content="0;URL=?page=branch_management"/>';
 		   }
 		   else
 		   {

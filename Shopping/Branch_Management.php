@@ -8,7 +8,7 @@
         <h1 style="text-align: center;"> Branch </h1>
         <p>
         <img src="images/add.png" alt="Add new" width="16" height="16" border="0" /> 
-        <a href="?page=Add_Category"> Add</a>
+        <a href="?page=Add_Branch"> Add</a>
         </p>
        
         <table id="tablebranch" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -37,7 +37,7 @@
               
               <td><?php echo $row["branch_name"]; ?></td>
               <td><?php echo $row["branch_des"]; ?></td>
-              <td style='text-align:center'><a href="?page=update_category&&id=<?php echo $row["branch_id"]; ?>">
+              <td style='text-align:center'><a href="?page=update_branch&&id=<?php echo $row["branch_id"]; ?>">
               <img src='images/edit.png' border='0'  /></a></td>
 
               <td style='text-align:center'>
