@@ -18,13 +18,14 @@
 			}
 		echo "</select>";
 	}
+ <br>
 	include_once("connection.php");
 	function bind_Branch_List($conn)
 	{
 		$sqlString = "select branch_id, branch_name from branch";
 		$result = pg_query($conn,$sqlString);
 		echo "<select name='BranchList' class='form-control'>
-			<option value='0'>Choose category</option>";
+			<option value='0'>Choose Branch</option>";
 			while($row=pg_fetch_array($result,NULL, PGSQL_ASSOC))
 			{
 				echo "<option value='".$row['branch_id']."'>".$row['branch_name']."</option>";
