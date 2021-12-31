@@ -68,9 +68,7 @@
                                <li><a> <from class="navbar-from navbar-left" action="index.php?page=search" method="post>">
                                     <div class="from-group">
                                         <input type="text" class="from-control" placeholder="Company ANT" name="txtSearch">
-                                    </div>
-                                    <br>
-                                    <button type="submit" class="Btn btn-default">Search<button>
+                                    </div>                                  
                                     </from>
                                     </a>
                                </li>                    
@@ -80,7 +78,6 @@
 								<li class="dropdown"><a href="#">Management<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="?page=Category_Management">Category Car</a></li>
-                                        <li><a href="?page=branch_management">Branch</a></li>
 										<li><a href="?page=product_management">Edit Car</a></li>
                                     </ul>
                                     <?php
@@ -108,10 +105,6 @@
                                         ?>
                                 </li>                        
 							</ul>
-                            
-						</div>
-                        <marquee width="100%" behavior="scroll" bgcolor="white"><b>Welcome To ATN Car Model</b></marquee>
-					</div>
 
 				</div>
 			</div>

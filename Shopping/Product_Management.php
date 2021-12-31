@@ -36,7 +36,6 @@
                     <th><strong>Price</strong></th>
                     <th><strong>Quantity</strong></th>
                     <th><strong>Category Name</strong></th>
-                    <th><strong>Branch Name</strong></th>
                     <th><strong>Image</strong></th>
                     <th><strong>Edit</strong></th>
                     <th><strong>Delete</strong></th>
@@ -59,7 +58,6 @@
               <td><?php echo $row["price"]; ?></td>
               <td ><?php echo $row["pro_qty"]; ?></td>
               <td><?php echo $row["cat_name"]; ?></td>
-              <td><?php echo $row["bra_name"]; ?></td>
              <td align='center' class='cotNutChucNang'>
                 <img src='images/<?php echo $row['pro_image']; ?>' border='0' width="50" height="50"  /></td>
              <td align='center' class='cotNutChucNang'><a href="?page=update_product&&id=<?php echo $row["product_id"]; ?>">
